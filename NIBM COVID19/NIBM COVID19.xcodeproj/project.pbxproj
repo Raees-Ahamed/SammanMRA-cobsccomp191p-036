@@ -12,10 +12,9 @@
 		5E6F0F5C24F0FBD30088945E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F0F5B24F0FBD30088945E /* Assets.xcassets */; };
 		5E6F0F6A24F0FBD40088945E /* NIBM_COVID19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F6924F0FBD40088945E /* NIBM_COVID19Tests.swift */; };
 		5E6F0F7524F0FBD50088945E /* NIBM_COVID19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F7424F0FBD50088945E /* NIBM_COVID19UITests.swift */; };
-		5E6F0F8324F0FFCD0088945E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F8224F0FFCD0088945E /* SignUpViewController.swift */; };
 		5E6F0F8524F0FFE80088945E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F8424F0FFE80088945E /* LoginViewController.swift */; };
 		5E6F0F8A24F101AA0088945E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F8924F101AA0088945E /* LoginView.swift */; };
-		5E6F0F8C24F101C30088945E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F8B24F101C30088945E /* SignUpView.swift */; };
+		5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA2F56F24F15E590095BBC4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +46,9 @@
 		5E6F0F7024F0FBD50088945E /* NIBM COVID19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F0F7424F0FBD50088945E /* NIBM_COVID19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19UITests.swift; sourceTree = "<group>"; };
 		5E6F0F7624F0FBD50088945E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E6F0F8224F0FFCD0088945E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5E6F0F8424F0FFE80088945E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E6F0F8924F101AA0088945E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		5E6F0F8B24F101C30088945E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		5EA2F56F24F15E590095BBC4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +133,6 @@
 		5E6F0F8624F100CB0088945E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5E6F0F8224F0FFCD0088945E /* SignUpViewController.swift */,
 				5E6F0F8424F0FFE80088945E /* LoginViewController.swift */,
 			);
 			path = Controller;
@@ -152,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				5E6F0F8924F101AA0088945E /* LoginView.swift */,
-				5E6F0F8B24F101C30088945E /* SignUpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +163,7 @@
 		5E90D5D624F10CA300788336 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5EA2F56F24F15E590095BBC4 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -300,11 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */,
 				5E6F0F8A24F101AA0088945E /* LoginView.swift in Sources */,
 				5E6F0F5A24F0FBD00088945E /* NIBM_COVID19.xcdatamodeld in Sources */,
 				5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */,
-				5E6F0F8C24F101C30088945E /* SignUpView.swift in Sources */,
-				5E6F0F8324F0FFCD0088945E /* SignUpViewController.swift in Sources */,
 				5E6F0F8524F0FFE80088945E /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
