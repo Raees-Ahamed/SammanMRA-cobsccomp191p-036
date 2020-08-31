@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E51757624FD8C7500BF4ADA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757524FD8C7500BF4ADA /* HomeViewController.swift */; };
 		5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F4F24F0FBD00088945E /* AppDelegate.swift */; };
 		5E6F0F5A24F0FBD00088945E /* NIBM_COVID19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F5824F0FBD00088945E /* NIBM_COVID19.xcdatamodeld */; };
 		5E6F0F5C24F0FBD30088945E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F0F5B24F0FBD30088945E /* Assets.xcassets */; };
 		5E6F0F6A24F0FBD40088945E /* NIBM_COVID19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F6924F0FBD40088945E /* NIBM_COVID19Tests.swift */; };
 		5E6F0F7524F0FBD50088945E /* NIBM_COVID19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F7424F0FBD50088945E /* NIBM_COVID19UITests.swift */; };
-		5E6F0F8524F0FFE80088945E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F8424F0FFE80088945E /* LoginViewController.swift */; };
-		5E6F0F8A24F101AA0088945E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F8924F101AA0088945E /* LoginView.swift */; };
+		5E8A453124FD7A2500E9386D /* AuthButtonUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A453024FD7A2500E9386D /* AuthButtonUIButton.swift */; };
+		5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A024F264B8004F7360 /* LoginViewController.swift */; };
+		5E9B59A324F266D4004F7360 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A224F266D4004F7360 /* SignUpViewController.swift */; };
 		5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA2F56F24F15E590095BBC4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E51757524FD8C7500BF4ADA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E6F0F4C24F0FBD00088945E /* NIBM COVID19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM COVID19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F0F4F24F0FBD00088945E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E6F0F5924F0FBD00088945E /* NIBM_COVID19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NIBM_COVID19.xcdatamodel; sourceTree = "<group>"; };
@@ -46,8 +49,9 @@
 		5E6F0F7024F0FBD50088945E /* NIBM COVID19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F0F7424F0FBD50088945E /* NIBM_COVID19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19UITests.swift; sourceTree = "<group>"; };
 		5E6F0F7624F0FBD50088945E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E6F0F8424F0FFE80088945E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		5E6F0F8924F101AA0088945E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5E8A453024FD7A2500E9386D /* AuthButtonUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonUIButton.swift; sourceTree = "<group>"; };
+		5E9B59A024F264B8004F7360 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5E9B59A224F266D4004F7360 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5EA2F56F24F15E590095BBC4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +137,9 @@
 		5E6F0F8624F100CB0088945E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5E6F0F8424F0FFE80088945E /* LoginViewController.swift */,
+				5E9B59A024F264B8004F7360 /* LoginViewController.swift */,
+				5E9B59A224F266D4004F7360 /* SignUpViewController.swift */,
+				5E51757524FD8C7500BF4ADA /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,7 +154,7 @@
 		5E6F0F8824F101160088945E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5E6F0F8924F101AA0088945E /* LoginView.swift */,
+				5E8A453024FD7A2500E9386D /* AuthButtonUIButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,10 +304,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */,
-				5E6F0F8A24F101AA0088945E /* LoginView.swift in Sources */,
 				5E6F0F5A24F0FBD00088945E /* NIBM_COVID19.xcdatamodeld in Sources */,
+				5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */,
+				5E8A453124FD7A2500E9386D /* AuthButtonUIButton.swift in Sources */,
 				5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */,
-				5E6F0F8524F0FFE80088945E /* LoginViewController.swift in Sources */,
+				5E51757624FD8C7500BF4ADA /* HomeViewController.swift in Sources */,
+				5E9B59A324F266D4004F7360 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
