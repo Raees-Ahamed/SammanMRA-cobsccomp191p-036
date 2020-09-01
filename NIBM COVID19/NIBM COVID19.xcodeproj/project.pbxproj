@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E51757624FD8C7500BF4ADA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757524FD8C7500BF4ADA /* HomeViewController.swift */; };
+		5E51757824FD8FD900BF4ADA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757724FD8FD900BF4ADA /* TabBarViewController.swift */; };
+		5E51757A24FD913300BF4ADA /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757924FD913300BF4ADA /* UpdateViewController.swift */; };
+		5E51757C24FD914900BF4ADA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757B24FD914900BF4ADA /* SettingsViewController.swift */; };
 		5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F4F24F0FBD00088945E /* AppDelegate.swift */; };
 		5E6F0F5A24F0FBD00088945E /* NIBM_COVID19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F5824F0FBD00088945E /* NIBM_COVID19.xcdatamodeld */; };
 		5E6F0F5C24F0FBD30088945E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F0F5B24F0FBD30088945E /* Assets.xcassets */; };
@@ -17,6 +20,7 @@
 		5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A024F264B8004F7360 /* LoginViewController.swift */; };
 		5E9B59A324F266D4004F7360 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A224F266D4004F7360 /* SignUpViewController.swift */; };
 		5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA2F56F24F15E590095BBC4 /* Extensions.swift */; };
+		840E3F96641957D0E93D0456 /* Pods_NIBM_COVID19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3654EE01248348F8629C45A /* Pods_NIBM_COVID19.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2415F9BAC2806E46C4FDE438 /* Pods-NIBM COVID19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM COVID19.debug.xcconfig"; path = "Target Support Files/Pods-NIBM COVID19/Pods-NIBM COVID19.debug.xcconfig"; sourceTree = "<group>"; };
 		5E51757524FD8C7500BF4ADA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5E51757724FD8FD900BF4ADA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		5E51757924FD913300BF4ADA /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		5E51757B24FD914900BF4ADA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5E6F0F4C24F0FBD00088945E /* NIBM COVID19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM COVID19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F0F4F24F0FBD00088945E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E6F0F5924F0FBD00088945E /* NIBM_COVID19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NIBM_COVID19.xcdatamodel; sourceTree = "<group>"; };
@@ -53,6 +61,8 @@
 		5E9B59A024F264B8004F7360 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E9B59A224F266D4004F7360 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5EA2F56F24F15E590095BBC4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A4DA4D34CB485F8CDD4A7539 /* Pods-NIBM COVID19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM COVID19.release.xcconfig"; path = "Target Support Files/Pods-NIBM COVID19/Pods-NIBM COVID19.release.xcconfig"; sourceTree = "<group>"; };
+		D3654EE01248348F8629C45A /* Pods_NIBM_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E3F96641957D0E93D0456 /* Pods_NIBM_COVID19.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BA3E35E5A750AF740E2C301 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2415F9BAC2806E46C4FDE438 /* Pods-NIBM COVID19.debug.xcconfig */,
+				A4DA4D34CB485F8CDD4A7539 /* Pods-NIBM COVID19.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5E6F0F4324F0FBCF0088945E = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +108,8 @@
 				5E6F0F6824F0FBD40088945E /* NIBM COVID19Tests */,
 				5E6F0F7324F0FBD50088945E /* NIBM COVID19UITests */,
 				5E6F0F4D24F0FBD00088945E /* Products */,
+				2BA3E35E5A750AF740E2C301 /* Pods */,
+				C08A4FD7298C2A733DAA3219 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +163,9 @@
 				5E9B59A024F264B8004F7360 /* LoginViewController.swift */,
 				5E9B59A224F266D4004F7360 /* SignUpViewController.swift */,
 				5E51757524FD8C7500BF4ADA /* HomeViewController.swift */,
+				5E51757724FD8FD900BF4ADA /* TabBarViewController.swift */,
+				5E51757924FD913300BF4ADA /* UpdateViewController.swift */,
+				5E51757B24FD914900BF4ADA /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +200,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		C08A4FD7298C2A733DAA3219 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3654EE01248348F8629C45A /* Pods_NIBM_COVID19.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E6F0F7924F0FBD50088945E /* Build configuration list for PBXNativeTarget "NIBM COVID19" */;
 			buildPhases = (
+				9F9FF75026ADD5A18527022A /* [CP] Check Pods Manifest.lock */,
 				5E6F0F4824F0FBCF0088945E /* Sources */,
 				5E6F0F4924F0FBCF0088945E /* Frameworks */,
 				5E6F0F4A24F0FBCF0088945E /* Resources */,
+				3721936B4BF0ACB2A83B0CA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,12 +334,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3721936B4BF0ACB2A83B0CA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NIBM COVID19/Pods-NIBM COVID19-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NIBM COVID19/Pods-NIBM COVID19-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NIBM COVID19/Pods-NIBM COVID19-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F9FF75026ADD5A18527022A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NIBM COVID19-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E6F0F4824F0FBCF0088945E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E51757824FD8FD900BF4ADA /* TabBarViewController.swift in Sources */,
 				5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */,
+				5E51757A24FD913300BF4ADA /* UpdateViewController.swift in Sources */,
+				5E51757C24FD914900BF4ADA /* SettingsViewController.swift in Sources */,
 				5E6F0F5A24F0FBD00088945E /* NIBM_COVID19.xcdatamodeld in Sources */,
 				5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */,
 				5E8A453124FD7A2500E9386D /* AuthButtonUIButton.swift in Sources */,
@@ -461,6 +542,7 @@
 		};
 		5E6F0F7A24F0FBD50088945E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2415F9BAC2806E46C4FDE438 /* Pods-NIBM COVID19.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +561,7 @@
 		};
 		5E6F0F7B24F0FBD50088945E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4DA4D34CB485F8CDD4A7539 /* Pods-NIBM COVID19.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

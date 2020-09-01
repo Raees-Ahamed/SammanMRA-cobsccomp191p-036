@@ -121,6 +121,7 @@ class LoginViewController: UIViewController {
      }
     
     @objc func handleSignIn() {
+        
          /*
          guard let email = emailTextFiled.text else { return }
          guard let password = passwordTextFiled.text else { return }
@@ -144,18 +145,15 @@ class LoginViewController: UIViewController {
              controller.configureUi()
              
              self.dismiss(animated: true, completion: nil)
-         
-        
-        
-                       
          }*/
-        let homeViewController = HomeViewController()
-        navigationController?.pushViewController(homeViewController, animated: true)
+        
+        let tabBarViewController = TabBarViewController()
+        navigationController?.pushViewController(tabBarViewController, animated: true)
      }
      
      // MARK: Functions
      @objc func handleShowSignUp() {
-         
+    
          let signUpViewController = SignUpViewController()
          navigationController?.pushViewController(signUpViewController, animated: true)
          
