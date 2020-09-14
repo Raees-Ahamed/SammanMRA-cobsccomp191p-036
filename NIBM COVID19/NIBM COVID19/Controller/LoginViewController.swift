@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-     // MARK: - Propertie
+     // MARK: - Properties
      private let titleLabel: UILabel = {
      
          let label = UILabel()
@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
          
      }()
      
-     // MARK: - Lifecycel
+     // MARK: - Lifecycle
 
      override func viewDidLoad() {
          
@@ -146,10 +146,29 @@ class LoginViewController: UIViewController {
              
              self.dismiss(animated: true, completion: nil)
          }*/
-        
-        let tabBarViewController = TabBarViewController()
-        navigationController?.pushViewController(tabBarViewController, animated: true)
+        let name = emailTextFiled.text
+        let password = passwordTextFiled.text
+        if(name == "" || password == ""){
+            popupAlert()
+        }else{
+            let tabBarViewController = TabBarViewController()
+            navigationController?.pushViewController(tabBarViewController, animated: true)
+        }
      }
+    
+    @objc func popupAlert(){
+        
+        let alert = UIAlertController(title: "Error",
+                                    message: "Something you're missing to fill",
+                                    preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            print("Great! Let's Play!")}))
+  
+        
+        self.present(alert, animated: true)
+        
+    }
      
      // MARK: Functions
      @objc func handleShowSignUp() {

@@ -14,7 +14,7 @@ class TabBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .purple
+        view.backgroundColor = .black
         
         tabBar()
         // Do any additional setup after loading the view.
@@ -24,13 +24,17 @@ class TabBarViewController: UIViewController {
         
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem.title = "HOME"
+        homeViewController.tabBarItem.image = UIImage(named: "Home")
         
-        
+            
+
         let updatedViewController = UpdateViewController()
         updatedViewController.tabBarItem.title = "UPDATE"
+        updatedViewController.tabBarItem.image = UIImage(named: "plus")
         
         let settingsViewCOntroller = SettingsViewController()
         settingsViewCOntroller.tabBarItem.title = "SETTINGS"
+        settingsViewCOntroller.tabBarItem.image = UIImage(named: "Settings")
         
         tab.viewControllers = [homeViewController,updatedViewController,settingsViewCOntroller]
         self.view.addSubview(tab.view)

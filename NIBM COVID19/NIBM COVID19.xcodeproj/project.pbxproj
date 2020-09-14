@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A024F264B8004F7360 /* LoginViewController.swift */; };
 		5E9B59A324F266D4004F7360 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A224F266D4004F7360 /* SignUpViewController.swift */; };
 		5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA2F56F24F15E590095BBC4 /* Extensions.swift */; };
+		5EA3F06125002684004AA726 /* SafeActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3F06025002684004AA726 /* SafeActionsViewController.swift */; };
 		840E3F96641957D0E93D0456 /* Pods_NIBM_COVID19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3654EE01248348F8629C45A /* Pods_NIBM_COVID19.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		5E9B59A024F264B8004F7360 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E9B59A224F266D4004F7360 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5EA2F56F24F15E590095BBC4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5EA3F06025002684004AA726 /* SafeActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionsViewController.swift; sourceTree = "<group>"; };
 		A4DA4D34CB485F8CDD4A7539 /* Pods-NIBM COVID19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM COVID19.release.xcconfig"; path = "Target Support Files/Pods-NIBM COVID19/Pods-NIBM COVID19.release.xcconfig"; sourceTree = "<group>"; };
 		D3654EE01248348F8629C45A /* Pods_NIBM_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,7 +99,6 @@
 				2415F9BAC2806E46C4FDE438 /* Pods-NIBM COVID19.debug.xcconfig */,
 				A4DA4D34CB485F8CDD4A7539 /* Pods-NIBM COVID19.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -166,6 +167,7 @@
 				5E51757724FD8FD900BF4ADA /* TabBarViewController.swift */,
 				5E51757924FD913300BF4ADA /* UpdateViewController.swift */,
 				5E51757B24FD914900BF4ADA /* SettingsViewController.swift */,
+				5EA3F06025002684004AA726 /* SafeActionsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -386,6 +388,7 @@
 				5E51757A24FD913300BF4ADA /* UpdateViewController.swift in Sources */,
 				5E51757C24FD914900BF4ADA /* SettingsViewController.swift in Sources */,
 				5E6F0F5A24F0FBD00088945E /* NIBM_COVID19.xcdatamodeld in Sources */,
+				5EA3F06125002684004AA726 /* SafeActionsViewController.swift in Sources */,
 				5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */,
 				5E8A453124FD7A2500E9386D /* AuthButtonUIButton.swift in Sources */,
 				5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */,

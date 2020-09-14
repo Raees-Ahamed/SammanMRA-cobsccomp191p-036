@@ -70,7 +70,7 @@ class SignUpViewController: UIViewController {
          let button = AuthButtonUIButton(type: .system)
          button.setTitle("Sign Up", for: .normal)
          button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        // button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
          
          return button
      }()
@@ -96,7 +96,7 @@ class SignUpViewController: UIViewController {
      }
      
      // MARK: - Helper Function
-     
+       
      func configureUI() {
          view.backgroundColor = .black
          
@@ -145,12 +145,47 @@ class SignUpViewController: UIViewController {
                     print("DEBUG: Successfuly Registerd and save data..")
                 }
             }
+             
  */
+            
+            let account = accountTypeSegmentedControl.selectedSegmentIndex
+            let fullName = fullNameTextFiled.text
+            let email = emailTextFiled.text
+            let password = passwordTextFiled.text
+            
+            
+            if(fullName == "" || email == "" || password == ""){
+                popupAlert()
+            }
+            
+            var accountType : String = ""
+            
+            if(account == 0){
+                accountType = "staff"
+            }else{
+                accountType = "student"
+            }
+            print(accountType)
+            
         }
         
         @objc func handleShowLogIn() {
             navigationController?.popViewController(animated: true)
         }
+    
+      @objc func popupAlert(){
+          
+          let alert = UIAlertController(title: "Error",
+                                      message: "Something you're missing to fill",
+                                      preferredStyle: .alert)
+          
+          alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+              print("Great! Let's Play!")}))
+    
+          
+          self.present(alert, animated: true)
+          
+      }
     
 }
      
