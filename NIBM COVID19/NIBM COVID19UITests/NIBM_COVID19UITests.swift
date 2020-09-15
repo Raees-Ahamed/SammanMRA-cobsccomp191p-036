@@ -40,4 +40,8 @@ class NIBM_COVID19UITests: XCTestCase {
             }
         }
     }
+    
+    func checkTextFieldsAreEmpty() throws {
+        let userName = LoginViewController.LoginTextField()
+    }
 }

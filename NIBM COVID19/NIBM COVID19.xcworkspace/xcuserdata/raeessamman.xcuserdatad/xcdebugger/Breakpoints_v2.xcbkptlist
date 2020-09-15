@@ -14,8 +14,8 @@
             filePath = "NIBM COVID19/Controller/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "handleShowSignUp()"
             landmarkType = "7">
          </BreakpointContent>

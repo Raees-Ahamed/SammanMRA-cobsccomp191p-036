@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class SignUpViewController: UIViewController {
      
      private let titleLabel: UILabel = {
          let label = UILabel()
-         label.text = "NIBM-COVID-19"
+         label.text = "Create an account"
          label.font = UIFont(name: "Avenir-Light", size: 36)
          label.textColor = UIColor(white: 1, alpha: 0.8)
          
@@ -121,10 +122,12 @@ class SignUpViewController: UIViewController {
         
         @objc func handleSignUp() {
             
-           /* guard let email = emailTextFiled.text else { return }
+            guard let email = emailTextFiled.text else { return }
             guard let password = passwordTextFiled.text else { return }
             guard let fullName = fullNameTextFiled.text else { return }
             let accountType = accountTypeSegmentedControl.selectedSegmentIndex
+            
+            
             
             let values = [
                 "email": email,
@@ -132,6 +135,9 @@ class SignUpViewController: UIViewController {
                 "accountType": accountType
                 ] as [String : Any]
             
+            if(email == "" || password == "" || fullName == ""){
+                popupAlert()
+            }else{
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 if let error = error {
                     print("Faild to register user with error \(error)")
@@ -145,27 +151,10 @@ class SignUpViewController: UIViewController {
                     print("DEBUG: Successfuly Registerd and save data..")
                 }
             }
+            }
              
- */
             
-            let account = accountTypeSegmentedControl.selectedSegmentIndex
-            let fullName = fullNameTextFiled.text
-            let email = emailTextFiled.text
-            let password = passwordTextFiled.text
-            
-            
-            if(fullName == "" || email == "" || password == ""){
-                popupAlert()
-            }
-            
-            var accountType : String = ""
-            
-            if(account == 0){
-                accountType = "staff"
-            }else{
-                accountType = "student"
-            }
-            print(accountType)
+       
             
         }
         

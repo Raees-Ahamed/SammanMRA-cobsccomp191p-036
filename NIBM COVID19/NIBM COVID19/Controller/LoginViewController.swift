@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class LoginViewController: UIViewController {
      private let titleLabel: UILabel = {
      
          let label = UILabel()
-         label.text = "NIBM-COVID-19"
+         label.text = "LogIn"
          label.font = UIFont(name: "Avenir-Light", size: 36)
          label.textColor = UIColor(white: 1, alpha: 0.8)
          
@@ -84,75 +85,63 @@ class LoginViewController: UIViewController {
          super.viewDidLoad()
          
          confugerNaviagationBar()
-         
+         configureUI()
          view.backgroundColor = .backgroundColor
-     
-         view.addSubview(titleLabel)
-         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-         
-     
-     
-         let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
-         stack.axis = .vertical
-         stack.distribution = .fillEqually
-         stack.spacing = 16
-         
-         
-         
-         view.addSubview(stack)
-         
-         stack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16)
-         
-     
-         view.addSubview(dontHaveAccountButton)
-         dontHaveAccountButton.centerX(inView: view)
-         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
+
          
      }
 
      // MARK: - Helper Functions
+    
+    func configureUI(){
+            view.addSubview(titleLabel)
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+            
+            let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+            stack.axis = .vertical
+            stack.distribution = .fillEqually
+            stack.spacing = 16
+            
+            view.addSubview(stack)
+            
+            stack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16)
+            
+            view.addSubview(dontHaveAccountButton)
+            dontHaveAccountButton.centerX(inView: view)
+            dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
+    }
+    
      func confugerNaviagationBar() {
-         
          navigationController?.navigationBar.isHidden = true
          navigationController?.navigationBar.barStyle = .black
-         
      }
     
     @objc func handleSignIn() {
-        
-         /*
-         guard let email = emailTextFiled.text else { return }
-         guard let password = passwordTextFiled.text else { return }
-         
-         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-             if let error = error {
-                 print("DEBUG: Faild to log user with error \(error.localizedDescription)")
-                 return
-             }
-             
-             print("Login Successful")
-            
-             let keyWindow = UIApplication.shared.connectedScenes
-                 .filter({$0.activationState == .foregroundActive})
-                 .map({$0 as? UIWindowScene})
-                 .compactMap({$0})
-                 .first?.windows
-                 .filter({$0.isKeyWindow}).first
-             
-             guard let controller = keyWindow?.rootViewController as? HomeViewController else { return }
-             controller.configureUi()
-             
-             self.dismiss(animated: true, completion: nil)
-         }*/
-        let name = emailTextFiled.text
-        let password = passwordTextFiled.text
-        if(name == "" || password == ""){
+        guard let email = emailTextFiled.text else { return }
+        guard let password = passwordTextFiled.text else { return }
+
+        if(email == "" || password == ""){
             popupAlert()
         }else{
-            let tabBarViewController = TabBarViewController()
-            navigationController?.pushViewController(tabBarViewController, animated: true)
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if let error = error {
+                    print("DEBUG: Faild to log user with error \(error.localizedDescription)")
+                    return
+                }
+                
+                let keyWindow = UIApplication.shared.connectedScenes
+                    .filter({$0.activationState == .foregroundActive})
+                    .map({$0 as? UIWindowScene})
+                    .compactMap({$0})
+                    .first?.windows
+                    .filter({$0.isKeyWindow}).first
+                
+                 guard let controller = keyWindow?.rootViewController as? TabBarViewController else { return }
+                controller.tabBar()
+                self.dismiss(animated: true, completion: nil)
+            }
         }
      }
     
@@ -161,21 +150,15 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Error",
                                     message: "Something you're missing to fill",
                                     preferredStyle: .alert)
-        
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
             print("Great! Let's Play!")}))
-  
-        
         self.present(alert, animated: true)
         
     }
-     
-     // MARK: Functions
-     @objc func handleShowSignUp() {
     
+     @objc func handleShowSignUp() {
          let signUpViewController = SignUpViewController()
          navigationController?.pushViewController(signUpViewController, animated: true)
-         
      }
 
 }
