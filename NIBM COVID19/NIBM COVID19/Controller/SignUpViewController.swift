@@ -120,14 +120,17 @@ class SignUpViewController: UIViewController {
     
        // MARK: - Selectors
         
+    
+        
         @objc func handleSignUp() {
             
             guard let email = emailTextFiled.text else { return }
             guard let password = passwordTextFiled.text else { return }
             guard let fullName = fullNameTextFiled.text else { return }
             let accountType = accountTypeSegmentedControl.selectedSegmentIndex
+            let login = LoginViewController()
             
-            
+           
             
             let values = [
                 "email": email,
@@ -151,6 +154,7 @@ class SignUpViewController: UIViewController {
                     print("DEBUG: Successfuly Registerd and save data..")
                 }
             }
+                navigationController?.pushViewController(login, animated: true)
             }
              
             
