@@ -28,6 +28,7 @@
 		5E9B59A324F266D4004F7360 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A224F266D4004F7360 /* SignUpViewController.swift */; };
 		5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA2F56F24F15E590095BBC4 /* Extensions.swift */; };
 		5EA3F06125002684004AA726 /* SafeActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3F06025002684004AA726 /* SafeActionsViewController.swift */; };
+		5EC548D92511C9DA00CF560C /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC548D82511C9DA00CF560C /* ContactUsViewController.swift */; };
 		5ECAFA7025108D9F00D230B6 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECAFA6F25108D9F00D230B6 /* SurveyViewController.swift */; };
 		5ECAFA7225109D2C00D230B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECAFA7125109D2B00D230B6 /* GoogleService-Info.plist */; };
 		5EEECADC2510FB1E001F9948 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEECADB2510FB1E001F9948 /* ProfileViewController.swift */; };
@@ -80,6 +81,7 @@
 		5E9B59A224F266D4004F7360 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5EA2F56F24F15E590095BBC4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5EA3F06025002684004AA726 /* SafeActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionsViewController.swift; sourceTree = "<group>"; };
+		5EC548D82511C9DA00CF560C /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		5ECAFA6F25108D9F00D230B6 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		5ECAFA7125109D2B00D230B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EEECADB2510FB1E001F9948 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				5EA3F06025002684004AA726 /* SafeActionsViewController.swift */,
 				5ECAFA6F25108D9F00D230B6 /* SurveyViewController.swift */,
 				5EEECADB2510FB1E001F9948 /* ProfileViewController.swift */,
+				5EC548D82511C9DA00CF560C /* ContactUsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			files = (
 				5E51757824FD8FD900BF4ADA /* TabBarViewController.swift in Sources */,
 				5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */,
+				5EC548D92511C9DA00CF560C /* ContactUsViewController.swift in Sources */,
 				5E51757A24FD913300BF4ADA /* UpdateViewController.swift in Sources */,
 				5E22627C25113C47007B9684 /* LocationHandling.swift in Sources */,
 				5E226276251129AA007B9684 /* LocationinputActivation.swift in Sources */,
