@@ -1,9 +1,9 @@
 //
-//  UserAnnotation.swift
-//  M.M.Fayik-COBSCCOMP191P-035
+//  Users.swift
+//  NIBM COVID19
 //
-//  Created by Fayik Muzammil on 8/28/20.
-//  Copyright © 2020 Fayik Muzammil. All rights reserved.
+//  Created by Raees Samman on 8/23/20.
+//  Copyright © 2020 Raees Samman. All rights reserved.
 //
 
 import MapKit
