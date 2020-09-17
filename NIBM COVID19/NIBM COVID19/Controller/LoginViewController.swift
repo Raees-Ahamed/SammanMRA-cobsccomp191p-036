@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import LocalAuthentication
 
 class LoginViewController: UIViewController {
 
@@ -86,7 +87,7 @@ class LoginViewController: UIViewController {
          
          confugerNaviagationBar()
          configureUI()
-         view.backgroundColor = .backgroundColor
+         view.backgroundColor = .white
 
          
      }
@@ -131,19 +132,38 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                let keyWindow = UIApplication.shared.connectedScenes
-                    .filter({$0.activationState == .foregroundActive})
-                    .map({$0 as? UIWindowScene})
-                    .compactMap({$0})
-                    .first?.windows
-                    .filter({$0.isKeyWindow}).first
+                    
+                let context = LAContext()
+                var error: NSError?
+
+                if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                    let reason = "Identify yourself!"
+
+                    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                        [weak self] success, authenticationError in
+
+                        DispatchQueue.main.async {
+                            if success {
+                                let ac = UIAlertController(title: "Authentication success", message: "Well Done", preferredStyle: .alert)
+                                ac.addAction(UIAlertAction(title: "Happy", style: .default))
+                                self?.present(ac, animated: true)
+                            } else {
+                                let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
+                                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                                self?.present(ac, animated: true)
+                            }
+                        }
+                    }
+                } else {
+                    let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biometric authentication.", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
+                }
                 
-                 guard let controller = keyWindow?.rootViewController as? TabBarViewController else { return }
-                controller.tabBar()
-                self.dismiss(animated: true, completion: nil)
             }
         }
      }
+
     
     @objc func popupAlert(){
         

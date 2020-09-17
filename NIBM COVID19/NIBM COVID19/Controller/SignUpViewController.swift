@@ -78,9 +78,9 @@ class SignUpViewController: UIViewController {
 
      let alreadyHaveAccountButton: AuthButtonUIButton = {
          let button = AuthButtonUIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white])
 
-        attributedTitle.append(NSAttributedString(string: "Log In", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint]))
+        attributedTitle.append(NSAttributedString(string: "Log In", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white]))
 
          button.addTarget(self, action: #selector(handleShowLogIn), for: .touchUpInside)
 
@@ -99,7 +99,7 @@ class SignUpViewController: UIViewController {
      // MARK: - Helper Function
        
      func configureUI() {
-         view.backgroundColor = .black
+         view.backgroundColor = .white
          
          view.addSubview(titleLabel)
          titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
@@ -128,9 +128,6 @@ class SignUpViewController: UIViewController {
             guard let password = passwordTextFiled.text else { return }
             guard let fullName = fullNameTextFiled.text else { return }
             let accountType = accountTypeSegmentedControl.selectedSegmentIndex
-            let login = LoginViewController()
-            
-           
             
             let values = [
                 "email": email,
@@ -153,13 +150,8 @@ class SignUpViewController: UIViewController {
                     
                     print("DEBUG: Successfuly Registerd and save data..")
                 }
+              }
             }
-                navigationController?.pushViewController(login, animated: true)
-            }
-             
-            
-       
-            
         }
         
         @objc func handleShowLogIn() {

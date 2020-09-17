@@ -10,64 +10,144 @@ import UIKit
 
 class UpdateViewController: UIViewController {
     
-    private let titleLabel: UILabel = {
+    // MARK: - Properties
     
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Update"
-        label.font = UIFont(name: "Avenir-Light", size: 36)
-        label.textColor = UIColor(white: 1, alpha: 0.8)
-        
+        label.text = "CREATE+"
+        label.font = UIFont(name: "Avenir-Light", size: 30)
+        label.textColor = .black
         return label
-        
     }()
-
-      private let loginButton: AuthButtonUIButton = {
-          let button = AuthButtonUIButton(type: .system)
-          button.setTitle("create a survey >", for: .normal)
-          button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-          button.addTarget(self, action: #selector(navigateToSurvey), for: .touchUpInside)
-          return button
-        
+    
+    // Notifications tile
+    
+    private let notificationsTile: UIButton = {
+        let tileView = UIButton()
+        tileView.backgroundColor = .white
+        tileView.layer.cornerRadius = 5
+        tileView.layer.masksToBounds = true
+        tileView.addTarget(self, action: #selector(showNotifications), for: .touchUpInside)
+        return tileView
+    }()
+    
+    private let notificationsTileLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Create Notifications"
+        label.font = UIFont(name: "Avenir-Medium", size: 18)
+        label.textColor = UIColor.black
+        //label.backgroundColor = .red
+        return label
+    }()
+    
+    private let notificationsTileButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(weight: .bold)
+        button.setImage(UIImage(systemName: "chevron.right", withConfiguration: boldConfig), for: .normal)
+        //button.backgroundColor = .green
+        return button
+    }()
+    
+    // New survey tile
+    
+    private let surveyTileUIView: UIView = {
+        let tileView = UIView()
+        tileView.backgroundColor = .white
+        tileView.layer.cornerRadius = 5
+        tileView.layer.masksToBounds = true
+        return tileView
+    }()
+    
+    private let surveyTile: UIButton = {
+        let tileBtn = UIButton()
+        tileBtn.backgroundColor = .white
+        tileBtn.layer.cornerRadius = 5
+        tileBtn.layer.masksToBounds = true
+        tileBtn.addTarget(self, action: #selector(showSurvey), for: .touchUpInside)
+        return tileBtn
+    }()
+    
+    private let surveyTileLabel: UILabel = {
+        let label = UILabel()
+        label.text = "New Survey"
+        label.font = UIFont(name: "Avenir-Medium", size: 18)
+        label.textColor = UIColor.black
+        //label.backgroundColor = .red
+        return label
+    }()
+    
+    private let surveyTileButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(weight: .bold)
+        button.setImage(UIImage(systemName: "chevron.right", withConfiguration: boldConfig), for: .normal)
+        //button.backgroundColor = .green
+        button.addTarget(self, action: #selector(showSurvey), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
+        tabBarController?.tabBar.isHidden = true
+        configureUI()
         // Do any additional setup after loading the view.
     }
     
     
-    func configureUI(){
-        
-        view.addSubview(titleLabel)
-         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        
-        let stack = UIStackView(arrangedSubviews: [loginButton])
-                 stack.axis = .vertical
-                 stack.distribution = .fillEqually
-                 stack.spacing = 16
-                 
-                 view.addSubview(stack)
-                 
-                 stack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16)
-                 
-    }
-    
-    @objc func navigateToSurvey(){
-                 let signUpViewController = SurveyViewController()
-        navigationController?.pushViewController(signUpViewController, animated: true)
-    }
+        func configureUI() {
+            configNavBar()
+            view.backgroundColor = .systemGray6
+            
+            view.addSubview(titleLabel)
+            titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
+            titleLabel.centerX(inView: view)
+            
+            view.addSubview(notificationsTile)
+            notificationsTile.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 70)
+            
+            view.addSubview(notificationsTileLabel)
+            notificationsTileLabel.anchor(top: notificationsTile.topAnchor, left: notificationsTile.leftAnchor, paddingLeft: 25)
+            notificationsTileLabel.centerY(inView: notificationsTile)
+            
+            view.addSubview(notificationsTileButton)
+            notificationsTileButton.anchor(top: notificationsTile.topAnchor, right: notificationsTile.rightAnchor, width: 60)
+            notificationsTileButton.centerY(inView: notificationsTile)
+            
+            // survey tile
+            
+            view.addSubview(surveyTile)
+            surveyTile.anchor(top: notificationsTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 70)
 
-    /*
-    // MARK: - Navigation
+            view.addSubview(surveyTileLabel)
+            surveyTileLabel.anchor(top: surveyTile.topAnchor, left: surveyTile.leftAnchor, paddingLeft: 25)
+            surveyTileLabel.centerY(inView: surveyTile)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+            view.addSubview(surveyTileButton)
+            surveyTileButton.anchor(top: surveyTile.topAnchor, right: surveyTile.rightAnchor, width: 60)
+            surveyTileButton.centerY(inView: surveyTile)
+        }
+        
+        func configNavBar() {
+            //navigationController?.navigationBar.barTintColor = .lightGray
+            navigationController?.navigationBar.isHidden = true
+            navigationController?.navigationBar.barStyle = .default
+        }
+        
+        // MARK: - Selectors
+        
+        @objc func showNotifications() {
+            let nav = UINavigationController(rootViewController: SafeActionsViewController())
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+
+        }
+        
+        @objc func showSurvey() {
+    //        let nav = UINavigationController(rootViewController: SurveyViewController())
+    //        nav.modalPresentationStyle = .fullScreen
+    //        self.present(nav, animated: true, completion: nil)
+            let vc = SurveyViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
 
 }

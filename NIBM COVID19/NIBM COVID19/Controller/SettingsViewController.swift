@@ -136,6 +136,7 @@ class SettingsViewController: UIViewController {
         view.backgroundColor = .black
            safeArea = view.layoutMarginsGuide
           configureUI()
+        tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -169,6 +170,7 @@ class SettingsViewController: UIViewController {
         stack.centerX(inView: view)
         stack.centerY(inView: view)
         view.addSubview(logoutButton)
+        
         logoutButton.anchor(left: view.leftAnchor, bottom: safeArea.bottomAnchor, right: view.rightAnchor, height: 60)
         
         view.addSubview(blankView)
