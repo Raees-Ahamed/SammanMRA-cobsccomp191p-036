@@ -14,7 +14,7 @@ class UpdateViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "CREATE+"
+        label.text = ""
         label.font = UIFont(name: "Avenir-Light", size: 30)
         label.textColor = .black
         return label
@@ -57,6 +57,25 @@ class UpdateViewController: UIViewController {
         tileView.layer.masksToBounds = true
         return tileView
     }()
+    
+    private let temperatureSubmitButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.backgroundColor = .black
+        button.setDimensions(height: 50, width: 80)
+        button.setTitle("Submit temperature", for: .normal)
+        return button
+    }()
+    
+    let temperatureTextfield : UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "ENTER TEMPERATURE"
+        textField.textColor = .black
+        textField.setDimensions(height: 50, width: 80)
+        
+        return textField
+    }()
+    
+
     
     private let surveyTile: UIButton = {
         let tileBtn = UIButton()
@@ -125,6 +144,14 @@ class UpdateViewController: UIViewController {
             view.addSubview(surveyTileButton)
             surveyTileButton.anchor(top: surveyTile.topAnchor, right: surveyTile.rightAnchor, width: 60)
             surveyTileButton.centerY(inView: surveyTile)
+            
+            view.addSubview(temperatureTextfield)
+            temperatureTextfield.anchor(top: surveyTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 70)
+            temperatureTextfield.centerX(inView: view)
+            
+            view.addSubview(temperatureSubmitButton)
+            temperatureSubmitButton.anchor(top: temperatureTextfield.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 70)
+            temperatureSubmitButton.centerX(inView: view)
         }
         
         func configNavBar() {
