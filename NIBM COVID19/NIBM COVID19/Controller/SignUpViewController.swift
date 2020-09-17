@@ -78,7 +78,7 @@ class SignUpViewController: UIViewController {
 
      let alreadyHaveAccountButton: AuthButtonUIButton = {
          let button = AuthButtonUIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white])
+        let attributedTitle = NSMutableAttributedString(string: "have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white])
 
         attributedTitle.append(NSAttributedString(string: "Log In", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white]))
 

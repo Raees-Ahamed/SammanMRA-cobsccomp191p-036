@@ -163,18 +163,19 @@ class UpdateViewController: UIViewController {
         // MARK: - Selectors
         
         @objc func showNotifications() {
-            let nav = UINavigationController(rootViewController: SafeActionsViewController())
-            nav.modalPresentationStyle = .fullScreen
-            self.present(nav, animated: true, completion: nil)
+            let vc = LoginViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: false)
 
         }
         
         @objc func showSurvey() {
-    //        let nav = UINavigationController(rootViewController: SurveyViewController())
-    //        nav.modalPresentationStyle = .fullScreen
-    //        self.present(nav, animated: true, completion: nil)
             let vc = SurveyViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+            vc.hidesBottomBarWhenPushed = true
+            vc.modalPresentationStyle = .fullScreen
+          //  self.navigationController?.pushViewController(vc, animated: false)
+            self.present(vc,animated: true,completion: nil)
+            
+    }
 
 }

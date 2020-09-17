@@ -141,6 +141,7 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
         
        // btnPrev.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingLeft: 20,paddingBottom: 40, height: 50,width: 100)
         // btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
+        btnPrev.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.bottomAnchor,paddingLeft: 10 ,width: 100, height: 50)
         
         self.view.addSubview(btnNext)
 //        btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
@@ -156,6 +157,7 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
 //        lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
 //        lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
 //        lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
+        btnNext.anchor( bottom: view.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor,paddingRight: 10 ,height: 50)
         
 
     }

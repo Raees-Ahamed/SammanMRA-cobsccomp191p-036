@@ -184,6 +184,9 @@ class SettingsViewController: UIViewController {
     
     @objc func showProfile(){
         let profile = ProfileViewController()
+        
+        
+        
         navigationController?.pushViewController(profile, animated: true)
     }
     

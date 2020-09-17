@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import NIBM_COVID19
+//@testable import NIBM_COVID19
 
 class NIBM_COVID19Tests: XCTestCase {
 
