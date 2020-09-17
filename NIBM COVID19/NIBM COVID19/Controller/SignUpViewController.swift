@@ -140,7 +140,10 @@ class SignUpViewController: UIViewController {
             guard let password = passwordTextFiled.text else { return }
             guard let fullName = fullNameTextFiled.text else { return }
             let accountType = accountTypeSegmentedControl.selectedSegmentIndex
-            
+            let home = TabBarViewController()
+               home.hidesBottomBarWhenPushed = true
+               home.modalPresentationStyle = .fullScreen
+             
             let values = [
                 "email": email,
                 "fullName": fullName,
@@ -161,6 +164,8 @@ class SignUpViewController: UIViewController {
                 Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
                     
                     print("DEBUG: Successfuly Registerd and save data..")
+                    self.present(home,animated: true,completion: nil)
+                    self.popupAlert()
                 }
               }
             }
