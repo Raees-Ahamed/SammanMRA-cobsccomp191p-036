@@ -184,19 +184,22 @@ class SettingsViewController: UIViewController {
     
     @objc func showProfile(){
         let profile = ProfileViewController()
-        
-        
-        
-        navigationController?.pushViewController(profile, animated: true)
+        profile.hidesBottomBarWhenPushed = true
+        profile.modalPresentationStyle = .fullScreen
+        self.present(profile,animated: true,completion: nil)
     }
     
     @objc func showContactUs(){
-        let contactUs = ContactUsViewController()
-        navigationController?.pushViewController(contactUs, animated: true)
+        let contact = ContactUsViewController()
+          contact.hidesBottomBarWhenPushed = true
+          contact.modalPresentationStyle = .fullScreen
+          self.present(contact,animated: true,completion: nil)
     }
     
     @objc func showShareWithFriend(){
-        let shareWithFriend = ProfileViewController()
-        navigationController?.pushViewController(shareWithFriend, animated: true)
+        let contact = ContactUsViewController()
+        contact.hidesBottomBarWhenPushed = true
+        contact.modalPresentationStyle = .fullScreen
+        self.present(contact,animated: true,completion: nil)
     }
 }
