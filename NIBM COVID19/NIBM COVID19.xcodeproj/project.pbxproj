@@ -34,6 +34,7 @@
 		5ECAFA7225109D2C00D230B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECAFA7125109D2B00D230B6 /* GoogleService-Info.plist */; };
 		5EDF3BFD25122F180033A95B /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3BFC25122F180033A95B /* SurveyViewController.swift */; };
 		5EEECADC2510FB1E001F9948 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEECADB2510FB1E001F9948 /* ProfileViewController.swift */; };
+		5EFAF4F0251378E3002D7EB6 /* SafeActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFAF4EF251378E3002D7EB6 /* SafeActionCollectionViewCell.swift */; };
 		840E3F96641957D0E93D0456 /* Pods_NIBM_COVID19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3654EE01248348F8629C45A /* Pods_NIBM_COVID19.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		5ECAFA7125109D2B00D230B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EDF3BFC25122F180033A95B /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = ../../../../../../Downloads/fwdsurver/SurveyViewController.swift; sourceTree = "<group>"; };
 		5EEECADB2510FB1E001F9948 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5EFAF4EF251378E3002D7EB6 /* SafeActionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4DA4D34CB485F8CDD4A7539 /* Pods-NIBM COVID19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM COVID19.release.xcconfig"; path = "Target Support Files/Pods-NIBM COVID19/Pods-NIBM COVID19.release.xcconfig"; sourceTree = "<group>"; };
 		D3654EE01248348F8629C45A /* Pods_NIBM_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,6 +223,7 @@
 				5E31590E251203FE0080FB46 /* LocationTableViewCell.swift */,
 				5E3159032511F8320080FB46 /* SurveyCollectionViewCell.swift */,
 				5E8A453024FD7A2500E9386D /* AuthButtonUIButton.swift */,
+				5EFAF4EF251378E3002D7EB6 /* SafeActionCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				5EA2F57024F15E590095BBC4 /* Extensions.swift in Sources */,
 				5EC548D92511C9DA00CF560C /* ContactUsViewController.swift in Sources */,
 				5E31590C2512037F0080FB46 /* LocationinputActivation.swift in Sources */,
+				5EFAF4F0251378E3002D7EB6 /* SafeActionCollectionViewCell.swift in Sources */,
 				5E51757A24FD913300BF4ADA /* UpdateViewController.swift in Sources */,
 				5E3159042511F8320080FB46 /* SurveyCollectionViewCell.swift in Sources */,
 				5E51757C24FD914900BF4ADA /* SettingsViewController.swift in Sources */,
