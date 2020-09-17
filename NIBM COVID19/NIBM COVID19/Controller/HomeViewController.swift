@@ -336,8 +336,7 @@ class HomeViewController: UIViewController {
     // MARK: - Navigation
 
     func configureNavigationBar() {
-           navigationController?.navigationBar.isHidden = true
-          // navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.isHidden = true
        }
 
 

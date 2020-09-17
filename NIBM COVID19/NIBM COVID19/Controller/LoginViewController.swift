@@ -177,8 +177,10 @@ class LoginViewController: UIViewController {
     }
     
      @objc func handleShowSignUp() {
-         let signUpViewController = SignUpViewController()
-         navigationController?.pushViewController(signUpViewController, animated: true)
+         let signup = SignUpViewController()
+         signup.hidesBottomBarWhenPushed = true
+         signup.modalPresentationStyle = .fullScreen
+         self.present(signup,animated: true,completion: nil)
      }
 
 }

@@ -63,6 +63,7 @@ class UpdateViewController: UIViewController {
         button.backgroundColor = .black
         button.setDimensions(height: 50, width: 80)
         button.setTitle("Submit temperature", for: .normal)
+        button.addTarget(self, action: #selector(updateTemperature), for: .touchUpInside)
         return button
     }()
     
@@ -160,22 +161,54 @@ class UpdateViewController: UIViewController {
             navigationController?.navigationBar.barStyle = .default
         }
         
-        // MARK: - Selectors
-        
+
         @objc func showNotifications() {
-            let vc = LoginViewController()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: false)
+            let login = LoginViewController()
+            login.hidesBottomBarWhenPushed = true
+            login.modalPresentationStyle = .fullScreen
+            self.present(login,animated: true,completion: nil)
 
         }
         
         @objc func showSurvey() {
-            let vc = SurveyViewController()
-            vc.hidesBottomBarWhenPushed = true
-            vc.modalPresentationStyle = .fullScreen
-          //  self.navigationController?.pushViewController(vc, animated: false)
-            self.present(vc,animated: true,completion: nil)
+            let survey = SurveyViewController()
+            survey.hidesBottomBarWhenPushed = true
+            survey.modalPresentationStyle = .fullScreen
+            self.present(survey,animated: true,completion: nil)
             
     }
+    
+    @objc func updateTemperature(){
+    
+        let temperature = temperatureTextfield.text
+        
+        if(temperature == ""){
+            popupAlert()
+        }
+        else{
+            
+        }
+     
+    }
+    @objc func popupAlert(){
+        
+        let alert = UIAlertController(title: "Error",
+                                    message: "Something you're missing to fill",
+                                    preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            print("Great! Let's Play!")}))
+        self.present(alert, animated: true)
+        
+    }
 
+    @objc func succesAlert(){
+           
+           let alert = UIAlertController(title: "Success",
+                                       message: "Temperature Updated",
+                                       preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+               print("Great! Let's Play!")}))
+           self.present(alert, animated: true)
+           
+       }
 }

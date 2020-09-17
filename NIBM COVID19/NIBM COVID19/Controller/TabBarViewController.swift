@@ -15,7 +15,7 @@ class TabBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        
+        configureNavigationBar()
         tabBar()
         // Do any additional setup after loading the view.
     }
@@ -39,4 +39,9 @@ class TabBarViewController: UIViewController {
         tab.viewControllers = [homeViewController,updatedViewController,settingsViewController]
         self.view.addSubview(tab.view)
     }
+    
+    func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+       }
+
 }
