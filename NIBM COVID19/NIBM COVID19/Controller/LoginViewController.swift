@@ -176,6 +176,8 @@ class LoginViewController: UIViewController {
                     self.present(ac, animated: true)
                 }
                 
+                print("Login Success")
+                self.dismiss(animated: true, completion: nil)
             }
         }
      }

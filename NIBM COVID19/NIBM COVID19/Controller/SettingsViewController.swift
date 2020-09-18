@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import LocalAuthentication
 
 class SettingsViewController: UIViewController {
 
@@ -123,7 +125,7 @@ class SettingsViewController: UIViewController {
            button.setTitleColor(.black, for: .normal)
            button.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
            //button.addTextSpacing(2)
-           //button.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
+           button.addTarget(self, action: #selector(Logout), for: .touchUpInside)
            return button
        }()
 
@@ -148,8 +150,12 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         view.backgroundColor = .black
            safeArea = view.layoutMarginsGuide
+        
+          checkUserLoggedIn()
           configureUI()
         tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
@@ -230,5 +236,33 @@ class SettingsViewController: UIViewController {
         contact.hidesBottomBarWhenPushed = true
         contact.modalPresentationStyle = .fullScreen
         self.present(contact,animated: true,completion: nil)
+    }
+    
+    func checkUserLoggedIn(){
+        if(Auth.auth().currentUser?.uid == nil){
+            DispatchQueue.main.async {
+                let login = LoginViewController()
+                login.hidesBottomBarWhenPushed = true
+                login.modalPresentationStyle = .fullScreen
+                self.present(login,animated: true,completion: nil)
+            }
+        }else{
+            print("user already logged in")
+        }
+    }
+    
+    @objc func Logout(){
+        do{
+            try Auth.auth().signOut()
+            print("logged out")
+            
+            let login = LoginViewController()
+            login.hidesBottomBarWhenPushed = true
+            login.modalPresentationStyle = .fullScreen
+            self.present(login,animated: true,completion: nil)
+        }
+        catch{
+            print("signout error")
+        }
     }
 }

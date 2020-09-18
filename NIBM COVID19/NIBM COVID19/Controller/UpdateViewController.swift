@@ -5,8 +5,9 @@
 //  Created by Raees Samman on 8/31/20.
 //  Copyright © 2020 Raees Samman. All rights reserved.
 //
-
 import UIKit
+import Firebase
+import LocalAuthentication
 
 class UpdateViewController: UIViewController {
     
@@ -126,6 +127,7 @@ class UpdateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         tabBarController?.tabBar.isHidden = true
+        checkUserLoggedIn()
         configureUI()
         // Do any additional setup after loading the view.
     }
@@ -242,5 +244,18 @@ class UpdateViewController: UIViewController {
        Home.modalPresentationStyle = .fullScreen
        self.present(Home,animated: true,completion: nil)
         
+    }
+    
+    func checkUserLoggedIn(){
+        if(Auth.auth().currentUser?.uid == nil){
+            DispatchQueue.main.async {
+                let login = LoginViewController()
+                login.hidesBottomBarWhenPushed = true
+                login.modalPresentationStyle = .fullScreen
+                self.present(login,animated: true,completion: nil)
+            }
+        }else{
+            print("user already logged in")
+        }
     }
 }
