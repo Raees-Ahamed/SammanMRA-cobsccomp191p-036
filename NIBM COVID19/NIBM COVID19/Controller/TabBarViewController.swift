@@ -28,7 +28,7 @@ class TabBarViewController: UIViewController {
         
             
 
-        let updatedViewController = UpdateViewController()
+        let updatedViewController = LoginViewController()
         updatedViewController.tabBarItem.title = "UPDATE"
         updatedViewController.tabBarItem.image = UIImage(named: "plus")
         

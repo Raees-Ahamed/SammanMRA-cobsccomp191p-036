@@ -127,7 +127,22 @@ class SettingsViewController: UIViewController {
            return button
        }()
 
+    private let backButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(pointSize: .zero, weight: .bold, scale: .large)
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: boldConfig), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(handleGoBack), for: .touchUpInside)
+        return button
+    }()
     
+    private let backLbl: UILabel = {
+        let label = UILabel()
+        label.text = "Go Back"
+        label.font = UIFont(name: "Avenir-Light", size: 26)
+        label.textColor = .black
+        return label
+    }()
     
     
     
@@ -155,6 +170,13 @@ class SettingsViewController: UIViewController {
         configNavBar()
         
         view.backgroundColor = .systemGray6
+        
+        view.addSubview(backLbl)
+        backLbl.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
+              backLbl.centerX(inView: view)
+        
+        view.addSubview(backButton)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, width: 38, height: 38)
         
         view.addSubview(titleLbl)
         titleLbl.anchor(top: safeArea.bottomAnchor, paddingTop: 20)
@@ -187,6 +209,13 @@ class SettingsViewController: UIViewController {
         profile.hidesBottomBarWhenPushed = true
         profile.modalPresentationStyle = .fullScreen
         self.present(profile,animated: true,completion: nil)
+    }
+    
+    @objc func handleGoBack() {
+       let Home = TabBarViewController()
+       Home.hidesBottomBarWhenPushed = true
+       Home.modalPresentationStyle = .fullScreen
+       self.present(Home,animated: true,completion: nil)
     }
     
     @objc func showContactUs(){

@@ -105,6 +105,23 @@ class UpdateViewController: UIViewController {
         return button
     }()
     
+    private let backButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(pointSize: .zero, weight: .bold, scale: .large)
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: boldConfig), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(handleGoBack), for: .touchUpInside)
+        return button
+    }()
+    
+    private let titleLbl: UILabel = {
+        let label = UILabel()
+        label.text = "Go Back"
+        label.font = UIFont(name: "Avenir-Light", size: 26)
+        label.textColor = .black
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -118,8 +135,15 @@ class UpdateViewController: UIViewController {
             configNavBar()
             view.backgroundColor = .systemGray6
             
+            view.addSubview(titleLbl)
+            titleLbl.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
+                  titleLbl.centerX(inView: view)
+            
+            view.addSubview(backButton)
+            backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, width: 38, height: 38)
+            
             view.addSubview(titleLabel)
-            titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
+            titleLabel.anchor(top: backButton.bottomAnchor, paddingTop: 20)
             titleLabel.centerX(inView: view)
             
             view.addSubview(notificationsTile)
@@ -186,7 +210,7 @@ class UpdateViewController: UIViewController {
             popupAlert()
         }
         else{
-            
+            succesAlert()
         }
      
     }
@@ -211,4 +235,12 @@ class UpdateViewController: UIViewController {
            self.present(alert, animated: true)
            
        }
+    
+    @objc func handleGoBack() {
+       let Home = TabBarViewController()
+       Home.hidesBottomBarWhenPushed = true
+       Home.modalPresentationStyle = .fullScreen
+       self.present(Home,animated: true,completion: nil)
+        
+    }
 }

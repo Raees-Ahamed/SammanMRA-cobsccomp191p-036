@@ -33,9 +33,10 @@ class HomeViewController: UIViewController {
            containerView.backgroundColor = .white
            
            let iconImage = UIImageView()
-           //iconImage.image = UIImage(named: "patient")
+           iconImage.image = UIImage(named: "woman")
            containerView.addSubview(iconImage)
-           //iconImage.anchor(left: containerView.leftAnchor, paddingLeft: 36,  height: 125,width: 125)
+           iconImage.anchor(left: containerView.leftAnchor)
+           iconImage.setDimensions(height: 50, width: 50)
            iconImage.centerY(inView: containerView)
            
            let topText = UILabel()
@@ -53,7 +54,7 @@ class HomeViewController: UIViewController {
            let safeActions = UIButton()
            let imgConfig = UIImage.SymbolConfiguration(pointSize: 0, weight: .medium, scale: .small)
            safeActions.setTitle("Safe Actions ", for: .normal)
-           safeActions.setTitleColor(.darkGray, for: .normal)
+           safeActions.setTitleColor(.blue, for: .normal)
            safeActions.setImage(UIImage(systemName: "chevron.left", withConfiguration: imgConfig), for: .normal)
            safeActions.tintColor = .darkGray
            safeActions.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -72,27 +73,27 @@ class HomeViewController: UIViewController {
            tile.layer.cornerRadius = 5
            tile.layer.masksToBounds = true
            
-           let bell = UIImageView()
+           /*let bell = UIImageView()
            bell.image = UIImage(systemName: "bell")
            bell.tintColor = .systemYellow
-           tile.addSubview(bell)
-         //  bell.anchor(left: tile.leftAnchor, paddingLeft: 20, width: 32, height: 32)
-       // bell.anchor( left: tile.leftAnchor,  paddingLeft: 20, height: 32, width: 32)
-           bell.centerY(inView: tile)
+           tile.addSubview(bell)*/
+        
+           /*bell.anchor(left: tile.leftAnchor, paddingLeft: 20, width: 32, height: 32)
+           bell.centerY(inView: tile)*/
            
+        let title = UILabel()
+        title.text = "NIBM is closed until further notice"
+        tile.addSubview(title)
+        title.anchor(top: tile.topAnchor,  left: title.leftAnchor, right: tile.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingRight: 12)
+        
            let arrow = UIImageView()
            arrow.image = UIImage(systemName: "chevron.right")
            arrow.tintColor = .darkGray
            arrow.layer.masksToBounds = true
            tile.addSubview(arrow)
-          // arrow.anchor(right: tile.rightAnchor, paddingRight: 20, width: 14, height: 26)
-        //arrow.anchor( right: tile.rightAnchor,  paddingRight: 20, height: 26, width: 14)
-           arrow.centerY(inView: tile)
-           
-           let title = UILabel()
-           title.text = "NIBM is closed until further notice"
-           tile.addSubview(title)
-           title.anchor(top: tile.topAnchor,  left: bell.rightAnchor, right: arrow.leftAnchor, paddingTop: 15, paddingLeft: 12, paddingRight: 12)
+           arrow.anchor(left: title.rightAnchor, paddingLeft: 5, width: 32, height: 32)
+           //arrow.centerY(inView: tile)
+        
            
            let description = UILabel()
            description.text = "Get quick update about lecture schedule stay tune with LMS"
@@ -100,9 +101,9 @@ class HomeViewController: UIViewController {
            description.textColor = .darkGray
            description.numberOfLines = 2
            tile.addSubview(description)
-           description.anchor(top: title.bottomAnchor,  left: bell.rightAnchor, right: arrow.leftAnchor, paddingLeft: 12, paddingRight: 12)
+           description.anchor(top: title.bottomAnchor,  left: tile.rightAnchor, right: tile.leftAnchor, paddingLeft: 12, paddingRight: 12)
            
-         tile.addTarget(self, action: #selector(showNotific), for: .touchUpInside)
+        
            return tile
        }()
        
@@ -213,71 +214,18 @@ class HomeViewController: UIViewController {
        
        private let mapTile: UIView = {
            let tile = UIView()
-           //tile.backgroundColor = .red
            return tile
        }()
     
-    private var user: User? {
-        didSet {
-            //locationInputUIView.user = user
-            //if user?.accountType == .passenger {
-            
-// fetchOtherUsers()
-                //configureLocationInputActivationView()
-                //observeCurrentTrip()
-            //} else {
-                //observeTrips()
-            //}
-            
-        }
-    }
-
-
-
-
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//configureNavigationBar()
-   
         configController()
     }
 
     // MARK: - API
     
-    /*func fetchUserData() {
-        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        Service.shared.fetchUserData(uid: currentUid) { (user) in
-            self.user = user
-        }
-    }*/
-    
-//    func fetchOtherUsers() {
-//        guard let location = locationManager?.location else { return }
-//        Service.shared.fetchUsersLocation(location: location) { (driver) in
-//            guard let coordinate = driver.location?.coordinate else { return }
-//            let annotation = UserAnnotation(uid: driver.uid, coordinate: coordinate)
-//
-//            var driverIsVisible: Bool {
-//
-//                return self.mapView.annotations.contains { (annotation) -> Bool in
-//                    guard let driverAnno = annotation as? UserAnnotation else { return false }
-//
-//                    if driverAnno.uid == driver.uid {
-//                        driverAnno.updateAnnotationPosition(withCoordinate: coordinate)
-//                        return true
-//                    }
-//
-//                    return false
-//                }
-//            }
-//
-//            if !driverIsVisible {
-//                self.mapView.addAnnotation(annotation)
-//            }
-//        }
-//    }
+
 
 
     // MARK: - Helper Function
@@ -285,8 +233,6 @@ class HomeViewController: UIViewController {
     func configController() {
         configureNavigationBar()
        configureUI()
-      // fetchUserData()
-       // fetchOtherUsers()
     }
 
     
@@ -296,29 +242,18 @@ class HomeViewController: UIViewController {
          configureNavigationBar()
         view.backgroundColor = .systemGray6
                view.addSubview(topViewContainer)
-        topViewContainer.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 30 * view.bounds.height/100)
+        topViewContainer.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 30 * view.bounds.height/100)
+        topViewContainer.anchor(paddingTop: 30)
         
         view.addSubview(notificTile)
-       // notificTile.anchor(top: mainTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingRight: 16, height: 80)
         notificTile.anchor(top: topViewContainer.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingRight: 16, height: 80)
+        
         view.addSubview(caseTile)
         caseTile.anchor(top: notificTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, height: 25 * view.bounds.height/100)
         view.addSubview(mapTile)
         mapTile.anchor(top: caseTile.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
      setMap()
-//        view.addSubview(inputActivationUIView)
-//        inputActivationUIView.centerX(inView: view)
-//        inputActivationUIView.setDimensions(height: 50, width: view.frame.width - 64)
-//        inputActivationUIView.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 20)
-//
-//        inputActivationUIView.alpha = 0
-//
-//        UIView.animate(withDuration: 2) {
-//            self.inputActivationUIView.alpha = 1
-//        }
-
-
     }
 
 
@@ -344,51 +279,12 @@ class HomeViewController: UIViewController {
 
      // MARK: - Selectors
         
-        @objc func showNotific() {
-            print("notific")
-    //        let vc = SafeActionsViewController()
-    //        vc.hidesBottomBarWhenPushed = true
-    //        self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
         @objc func showSafeActions() {
-            let vc = SafeActionsViewController()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            let safeActions = SafeActionsViewController()
+            safeActions.hidesBottomBarWhenPushed = true
+            safeActions.modalPresentationStyle = .fullScreen
+            self.present(safeActions,animated: true,completion: nil)
         }
-
-
-
-//    func checkIsUserLoggedIn() {
-//                   if(Auth.auth().currentUser?.uid == nil) {
-//
-////                       DispatchQueue.main.async {
-////                            let nav = UINavigationController(rootViewController: LoginViewController())
-////                           self.present(nav, animated: true, completion: nil)
-////
-////
-////                           self.dismiss(animated: true, completion: nil)
-////                       }
-//                    DispatchQueue.main.async {
-//                                   let nav = UINavigationController(rootViewController: LoginViewController())
-//                                   nav.modalPresentationStyle = .fullScreen
-//                                   self.present(nav, animated: true, completion: nil)
-//                               }
-//
-//
-//
-//
-//
-//                   } else {
-//                       print("DEBUG: User is logged in..")
-//                    // setMap()
-//                    configController()
-//
-//                   }
-//               }
-
-
-
 
 
     func signOut() {
@@ -398,15 +294,6 @@ class HomeViewController: UIViewController {
                       print("DEBUG: sign out error")
                   }
               }
-
-
-
-
-
-
-
-
-
     }
 
 

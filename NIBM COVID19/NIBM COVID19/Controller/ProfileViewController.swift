@@ -46,7 +46,11 @@ class ProfileViewController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleGoBack() {
-        self.navigationController?.popToRootViewController(animated: true)
+       let profile = SettingsViewController()
+       profile.hidesBottomBarWhenPushed = true
+       profile.modalPresentationStyle = .fullScreen
+       self.present(profile,animated: true,completion: nil)
+        
     }
 
     func configUI() {

@@ -53,6 +53,22 @@ class LoginViewController: UIViewController {
          
      }()
      
+    private let backButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(pointSize: .zero, weight: .bold, scale: .large)
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: boldConfig), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(handleGoBack), for: .touchUpInside)
+        return button
+    }()
+    
+    private let titleLbl: UILabel = {
+        let label = UILabel()
+        label.text = "Go Back"
+        label.font = UIFont(name: "Avenir-Light", size: 26)
+        label.textColor = .black
+        return label
+    }()
      
        private let loginButton: AuthButtonUIButton = {
            let button = AuthButtonUIButton(type: .system)
@@ -183,4 +199,11 @@ class LoginViewController: UIViewController {
          self.present(signup,animated: true,completion: nil)
      }
 
+    @objc func handleGoBack() {
+       let profile = UpdateViewController()
+       profile.hidesBottomBarWhenPushed = true
+       profile.modalPresentationStyle = .fullScreen
+       self.present(profile,animated: true,completion: nil)
+        
+    }
 }

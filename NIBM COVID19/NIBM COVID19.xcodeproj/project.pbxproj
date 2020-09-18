@@ -22,9 +22,10 @@
 		5E51757C24FD914900BF4ADA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757B24FD914900BF4ADA /* SettingsViewController.swift */; };
 		5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F4F24F0FBD00088945E /* AppDelegate.swift */; };
 		5E6F0F5A24F0FBD00088945E /* NIBM_COVID19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F5824F0FBD00088945E /* NIBM_COVID19.xcdatamodeld */; };
-		5E6F0F5C24F0FBD30088945E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F0F5B24F0FBD30088945E /* Assets.xcassets */; };
 		5E6F0F6A24F0FBD40088945E /* NIBM_COVID19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F6924F0FBD40088945E /* NIBM_COVID19Tests.swift */; };
 		5E6F0F7524F0FBD50088945E /* NIBM_COVID19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F0F7424F0FBD50088945E /* NIBM_COVID19UITests.swift */; };
+		5E704FBA2514E475000A0CDB /* MapFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E704FB92514E475000A0CDB /* MapFullViewController.swift */; };
+		5E704FBC2514F58B000A0CDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E704FBB2514F58B000A0CDB /* Assets.xcassets */; };
 		5E8A453124FD7A2500E9386D /* AuthButtonUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A453024FD7A2500E9386D /* AuthButtonUIButton.swift */; };
 		5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A024F264B8004F7360 /* LoginViewController.swift */; };
 		5E9B59A324F266D4004F7360 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B59A224F266D4004F7360 /* SignUpViewController.swift */; };
@@ -73,7 +74,6 @@
 		5E6F0F4C24F0FBD00088945E /* NIBM COVID19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM COVID19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F0F4F24F0FBD00088945E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E6F0F5924F0FBD00088945E /* NIBM_COVID19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NIBM_COVID19.xcdatamodel; sourceTree = "<group>"; };
-		5E6F0F5B24F0FBD30088945E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E6F0F6024F0FBD30088945E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E6F0F6524F0FBD40088945E /* NIBM COVID19Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F0F6924F0FBD40088945E /* NIBM_COVID19Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19Tests.swift; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		5E6F0F7024F0FBD50088945E /* NIBM COVID19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F0F7424F0FBD50088945E /* NIBM_COVID19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19UITests.swift; sourceTree = "<group>"; };
 		5E6F0F7624F0FBD50088945E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E704FB92514E475000A0CDB /* MapFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFullViewController.swift; sourceTree = "<group>"; };
+		5E704FBB2514F58B000A0CDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/V.P.H.SHALITHA_COBSCCOMP191P-021-master/V.P.H.SHALITHA_COBSCCOMP191P-021/Assets.xcassets"; sourceTree = "<group>"; };
 		5E8A453024FD7A2500E9386D /* AuthButtonUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonUIButton.swift; sourceTree = "<group>"; };
 		5E9B59A024F264B8004F7360 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E9B59A224F266D4004F7360 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +164,7 @@
 				5E6F0F8724F1010C0088945E /* Model */,
 				5E6F0F8624F100CB0088945E /* Controller */,
 				5E6F0F4F24F0FBD00088945E /* AppDelegate.swift */,
-				5E6F0F5B24F0FBD30088945E /* Assets.xcassets */,
+				5E704FBB2514F58B000A0CDB /* Assets.xcassets */,
 				5E6F0F6024F0FBD30088945E /* Info.plist */,
 				5ECAFA7125109D2B00D230B6 /* GoogleService-Info.plist */,
 				5E6F0F5824F0FBD00088945E /* NIBM_COVID19.xcdatamodeld */,
@@ -202,6 +204,7 @@
 				5EA3F06025002684004AA726 /* SafeActionsViewController.swift */,
 				5EEECADB2510FB1E001F9948 /* ProfileViewController.swift */,
 				5EC548D82511C9DA00CF560C /* ContactUsViewController.swift */,
+				5E704FB92514E475000A0CDB /* MapFullViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,7 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6F0F5C24F0FBD30088945E /* Assets.xcassets in Resources */,
+				5E704FBC2514F58B000A0CDB /* Assets.xcassets in Resources */,
 				5ECAFA7225109D2C00D230B6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +444,7 @@
 				5EA3F06125002684004AA726 /* SafeActionsViewController.swift in Sources */,
 				5E31590A251202C30080FB46 /* Services.swift in Sources */,
 				5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */,
+				5E704FBA2514E475000A0CDB /* MapFullViewController.swift in Sources */,
 				5E8A453124FD7A2500E9386D /* AuthButtonUIButton.swift in Sources */,
 				5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */,
 				5E51757624FD8C7500BF4ADA /* HomeViewController.swift in Sources */,

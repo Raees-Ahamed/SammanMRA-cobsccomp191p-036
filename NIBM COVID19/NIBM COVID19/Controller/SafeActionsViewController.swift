@@ -15,7 +15,6 @@ struct safeAction {
    
 }
 
-
 class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var myCollectionView: UICollectionView!
@@ -27,9 +26,15 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  self.title="Safe Actions"
         configureNavigationBar()
         self.view.backgroundColor=UIColor.systemGray6
+        
+        view.addSubview(titleLbl)
+        titleLbl.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
+              titleLbl.centerX(inView: view)
+        
+        view.addSubview(backButton)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, width: 38, height: 38)
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -71,22 +76,12 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    //   setQuestionNumber()
-    }
     
-//    func setQuestionNumber() {
-//        let x = myCollectionView.contentOffset.x
-//        let w = myCollectionView.bounds.size.width
-//        let currentPage = Int(ceil(x/w))
-//        if currentPage < questionsArray.count {
-//          //  lblQueNumber.text = "Question: \(currentPage+1) / \(questionsArray.count)"
-//          //  currentQuestionNumber = currentPage + 1
-//        }
-//    }
     @objc func navToHome(){
-        let vc = TabBarViewController()
-                   self.navigationController?.pushViewController(vc, animated: true)
+        let navHome = TabBarViewController()
+        navHome.hidesBottomBarWhenPushed = true
+        navHome.modalPresentationStyle = .fullScreen
+        self.present(navHome,animated: true,completion: nil)
     }
     
     @objc func popAlert(){
@@ -111,7 +106,6 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
         currentQuestionNumber -= currentQuestionNumber <= 0 ? 0 : 1
         }
         self.moveToFrame(contentOffset: contentOffset)
-      // lblQueNumber.text = "Question: \(currentQuestionNumber) / \(questionsArray.count)"
     }
     
     func moveToFrame(contentOffset : CGFloat) {
@@ -121,52 +115,41 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
     
     func configureNavigationBar() {
          navigationController?.navigationBar.isHidden = true
-    //  navigationController?.navigationBar.barStyle = .default
-      
      }
     
     func setupViews() {
-//        myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
-//        myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-//        myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-//        myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
         
-        myCollectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+        myCollectionView.anchor(top: titleLbl.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 30)
         
         self.view.addSubview(btnPrev)
-//        btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
-      
-//        btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-//        btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
-        
-       // btnPrev.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingLeft: 20,paddingBottom: 40, height: 50,width: 100)
-        // btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
-        btnPrev.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.bottomAnchor,paddingLeft: 10 ,width: 100, height: 50)
+        btnPrev.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,paddingLeft: 10 ,width: 100, height: 50)
         
         self.view.addSubview(btnNext)
-//        btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
-      
-//        btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-//        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
-       // btnNext.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 40,paddingRight: 20,  height: 50,width: 100)
-      //   btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
-        
-//        self.view.addSubview(lblQueNumber)
-//        lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
-//        lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
-//        lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
-//        lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
-//        lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
-        btnNext.anchor( bottom: view.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor,paddingRight: 10 ,height: 50)
+        btnNext.anchor( bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor,paddingRight: 10 ,height: 50)
         
 
     }
     
+    private let backButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(pointSize: .zero, weight: .bold, scale: .large)
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: boldConfig), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(handleGoBack), for: .touchUpInside)
+        return button
+    }()
+    
+    private let titleLbl: UILabel = {
+        let label = UILabel()
+        label.text = "Go Back"
+        label.font = UIFont(name: "Avenir-Light", size: 26)
+        label.textColor = .black
+        return label
+    }()
+    
     let btnPrev: UIButton = {
         let btn=UIButton()
         btn.setTitle("PREVIOUS", for: .normal)
-       // btn.setTitleColor(UIColor.white, for: .normal)
-       // btn.backgroundColor=UIColor.orange
         btn.setTitleColor(UIColor.systemBlue, for: .normal)
         btn.backgroundColor=UIColor.systemGray6
         btn.layer.borderColor = UIColor.systemGray6.cgColor
@@ -187,41 +170,10 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
         btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
         return btn
     }()
-    
-//    let lblQueNumber: UILabel = {
-//        let lbl=UILabel()
-//        lbl.text="0 / 0"
-//        lbl.textColor=UIColor.gray
-//        lbl.textAlignment = .left
-//        lbl.font = UIFont.systemFont(ofSize: 16)
-//        lbl.translatesAutoresizingMaskIntoConstraints=false
-//        return lbl
-//    }()
-    
-//    let lblScore: UILabel = {
-//        let lbl=UILabel()
-//        lbl.text="0 / 0"
-//        lbl.textColor=UIColor.gray
-//        lbl.textAlignment = .right
-//        lbl.font = UIFont.systemFont(ofSize: 16)
-//        lbl.translatesAutoresizingMaskIntoConstraints=false
-//        return lbl
-//    }()
 }
 
 extension SafeActionsViewController: SafeActionCollectionViewCellDelegate {
     func didChooseAnswer(btnIndex: Int) {
-//        let centerIndex = getCenterIndex()
-//        guard let index = centerIndex else { return }
-//        questionsArray[index.item].isAnswered=true
-//        if questionsArray[index.item].correctAns != btnIndex {
-//            questionsArray[index.item].wrongAns = btnIndex
-//            score -= 1
-//        } else {
-//            score += 1
-//        }
-//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
-//        myCollectionView.reloadItems(at: [index])
     }
     
     func getCenterIndex() -> IndexPath? {
@@ -229,6 +181,14 @@ extension SafeActionsViewController: SafeActionCollectionViewCellDelegate {
         let index = myCollectionView!.indexPathForItem(at: center)
         print(index ?? "index not found")
         return index
+    }
+    
+    @objc func handleGoBack() {
+       let profile = UpdateViewController()
+       profile.hidesBottomBarWhenPushed = true
+       profile.modalPresentationStyle = .fullScreen
+       self.present(profile,animated: true,completion: nil)
+        
     }
 }
 
