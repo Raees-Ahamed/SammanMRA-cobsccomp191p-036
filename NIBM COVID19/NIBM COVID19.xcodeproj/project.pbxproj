@@ -16,6 +16,8 @@
 		5E31590C2512037F0080FB46 /* LocationinputActivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31590B2512037F0080FB46 /* LocationinputActivation.swift */; };
 		5E31590F251203FE0080FB46 /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31590D251203FE0080FB46 /* LocationInputView.swift */; };
 		5E315910251203FE0080FB46 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31590E251203FE0080FB46 /* LocationTableViewCell.swift */; };
+		5E38139D2515386C005144FE /* MapFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38139C2515386C005144FE /* MapFullViewController.swift */; };
+		5E38139E2515386C005144FE /* MapFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38139C2515386C005144FE /* MapFullViewController.swift */; };
 		5E51757624FD8C7500BF4ADA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757524FD8C7500BF4ADA /* HomeViewController.swift */; };
 		5E51757824FD8FD900BF4ADA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757724FD8FD900BF4ADA /* TabBarViewController.swift */; };
 		5E51757A24FD913300BF4ADA /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51757924FD913300BF4ADA /* UpdateViewController.swift */; };
@@ -66,6 +68,7 @@
 		5E31590B2512037F0080FB46 /* LocationinputActivation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationinputActivation.swift; path = "../../../../../../Downloads/New Folder With Items/fyi/LocationinputActivation.swift"; sourceTree = "<group>"; };
 		5E31590D251203FE0080FB46 /* LocationInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationInputView.swift; path = "../../../../../../Downloads/New Folder With Items/fyi/LocationInputView.swift"; sourceTree = "<group>"; };
 		5E31590E251203FE0080FB46 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = "../../../../../../Downloads/New Folder With Items/fyi/LocationTableViewCell.swift"; sourceTree = "<group>"; };
+		5E38139C2515386C005144FE /* MapFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFullViewController.swift; sourceTree = "<group>"; };
 		5E51757524FD8C7500BF4ADA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E51757724FD8FD900BF4ADA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5E51757924FD913300BF4ADA /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 				5EA3F06025002684004AA726 /* SafeActionsViewController.swift */,
 				5EEECADB2510FB1E001F9948 /* ProfileViewController.swift */,
 				5EC548D82511C9DA00CF560C /* ContactUsViewController.swift */,
+				5E38139C2515386C005144FE /* MapFullViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,6 +445,7 @@
 				5EA3F06125002684004AA726 /* SafeActionsViewController.swift in Sources */,
 				5E31590A251202C30080FB46 /* Services.swift in Sources */,
 				5E9B59A124F264B8004F7360 /* LoginViewController.swift in Sources */,
+				5E38139D2515386C005144FE /* MapFullViewController.swift in Sources */,
 				5E8A453124FD7A2500E9386D /* AuthButtonUIButton.swift in Sources */,
 				5E6F0F5024F0FBD00088945E /* AppDelegate.swift in Sources */,
 				5E51757624FD8C7500BF4ADA /* HomeViewController.swift in Sources */,
@@ -466,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E38139E2515386C005144FE /* MapFullViewController.swift in Sources */,
 				5E6F0F7524F0FBD50088945E /* NIBM_COVID19UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
