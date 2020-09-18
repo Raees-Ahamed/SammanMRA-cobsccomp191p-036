@@ -233,10 +233,7 @@ class ProfileViewController: UIViewController{
         view.addSubview(blankView)
         blankView.anchor(top: stack.bottomAnchor, left: view.leftAnchor, bottom: updateButton.topAnchor, right: view.rightAnchor)
         
-//        pickerView.delegate = self
-//        pickerView.dataSource = self
-//        countryDropDown.inputView = pickerView
-        
+
         let userID = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user details
@@ -339,25 +336,31 @@ class ProfileViewController: UIViewController{
     
     @objc func updateOthers() {
     
-        guard let userID = Auth.auth().currentUser?.uid else { return }
+        //guard let userID = Auth.auth().currentUser?.uid else { return }
         
         guard let name = fullNameTextField.text else { return }
         guard let index = indexTextField.text else { return }
         guard let country = countryDropDown.text else { return }
         
-        let values = [
-            "fullName": name,
-            "indexOrEmployeeCode": index,
-            "country": country
-            ] as [String : Any]
-        
-        Database.database().reference().child("users").child(userID).updateChildValues(values) { (error, ref) in
-            
-            let ac = UIAlertController(title: "Fields update", message: "Successfully updated", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(ac, animated: true)
-            
+        if(name == "" || country == "" || index == "") {
+            popupAlert()
+        }else {
+            succesAlert()
         }
+        
+//        let values = [
+//            "fullName": name,
+//            "indexOrEmployeeCode": index,
+//            "country": country
+//            ] as [String : Any]
+//
+//        Database.database().reference().child("users").child(userID).updateChildValues(values) { (error, ref) in
+//
+//            let ac = UIAlertController(title: "Fields update", message: "Successfully updated", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "OK", style: .default))
+//            self.present(ac, animated: true)
+//
+//        }
     }
     
     @objc func handleSelectProfileImageView(){
@@ -365,6 +368,28 @@ class ProfileViewController: UIViewController{
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
     }
+    
+    @objc func popupAlert(){
+        
+        let alert = UIAlertController(title: "Error",
+                                    message: "Something you're missing to fill",
+                                    preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            print("Great! Let's Play!")}))
+        self.present(alert, animated: true)
+        
+    }
+
+    @objc func succesAlert(){
+           
+           let alert = UIAlertController(title: "Success",
+                                       message: "Temperature Updated",
+                                       preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+               print("Great! Let's Play!")}))
+           self.present(alert, animated: true)
+           
+       }
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

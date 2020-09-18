@@ -89,13 +89,11 @@ class SettingsViewController: UIViewController {
            title.text = "Share with friend"
            title.textColor = .systemBlue
            tile.addSubview(title)
-           //title.backgroundColor = .green
            title.anchor(top: tile.topAnchor, left: tile.leftAnchor, bottom: tile.bottomAnchor, paddingLeft: 20)
            title.centerY(inView: tile)
            
            let arrow = UIImageView()
            arrow.image = UIImage(systemName: "chevron.right")
-           //arrow.backgroundColor = .green
            arrow.layer.masksToBounds = true
            tile.addSubview(arrow)
            arrow.anchor(right: tile.rightAnchor, paddingRight: 20, width: 14, height: 24)

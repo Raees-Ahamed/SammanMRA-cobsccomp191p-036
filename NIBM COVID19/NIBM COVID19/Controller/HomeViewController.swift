@@ -73,14 +73,6 @@ class HomeViewController: UIViewController {
            tile.layer.cornerRadius = 5
            tile.layer.masksToBounds = true
            
-           /*let bell = UIImageView()
-           bell.image = UIImage(systemName: "bell")
-           bell.tintColor = .systemYellow
-           tile.addSubview(bell)*/
-        
-           /*bell.anchor(left: tile.leftAnchor, paddingLeft: 20, width: 32, height: 32)
-           bell.centerY(inView: tile)*/
-           
         let title = UILabel()
         title.text = "NIBM is closed until further notice"
         tile.addSubview(title)
@@ -92,7 +84,7 @@ class HomeViewController: UIViewController {
            arrow.layer.masksToBounds = true
            tile.addSubview(arrow)
            arrow.anchor(left: title.rightAnchor, paddingLeft: 5, width: 32, height: 32)
-           //arrow.centerY(inView: tile)
+    
         
            
            let description = UILabel()

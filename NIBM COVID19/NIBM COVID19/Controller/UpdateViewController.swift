@@ -45,7 +45,6 @@ class UpdateViewController: UIViewController {
         let button = UIButton(type: .custom)
         let boldConfig = UIImage.SymbolConfiguration(weight: .bold)
         button.setImage(UIImage(systemName: "chevron.right", withConfiguration: boldConfig), for: .normal)
-        //button.backgroundColor = .green
         return button
     }()
     
