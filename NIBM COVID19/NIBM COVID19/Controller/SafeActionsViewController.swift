@@ -184,10 +184,10 @@ extension SafeActionsViewController: SafeActionCollectionViewCellDelegate {
     }
     
     @objc func handleGoBack() {
-       let profile = UpdateViewController()
-       profile.hidesBottomBarWhenPushed = true
-       profile.modalPresentationStyle = .fullScreen
-       self.present(profile,animated: true,completion: nil)
+       let home = TabBarViewController()
+       home.hidesBottomBarWhenPushed = true
+       home.modalPresentationStyle = .fullScreen
+       self.present(home,animated: true,completion: nil)
         
     }
 }

@@ -187,10 +187,10 @@ class UpdateViewController: UIViewController {
         
 
         @objc func showNotifications() {
-            let login = LoginViewController()
-            login.hidesBottomBarWhenPushed = true
-            login.modalPresentationStyle = .fullScreen
-            self.present(login,animated: true,completion: nil)
+            let notification = CreateNotificationViewController()
+            notification.hidesBottomBarWhenPushed = true
+            notification.modalPresentationStyle = .fullScreen
+            self.present(notification,animated: true,completion: nil)
 
         }
         

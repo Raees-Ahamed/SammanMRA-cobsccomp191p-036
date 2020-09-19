@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
        private let titleLbl: UILabel = {
            let label = UILabel()
            label.text = "Settings"
-           label.font = UIFont(name: "Avenir-Light", size: 30)
+           label.font = UIFont(name: "Avenir-Light", size: 25)
            label.textColor = .black
            return label
        }()
@@ -89,7 +89,7 @@ class SettingsViewController: UIViewController {
            title.text = "Share with friend"
            title.textColor = .systemBlue
            tile.addSubview(title)
-           title.anchor(top: tile.topAnchor, left: tile.leftAnchor, bottom: tile.bottomAnchor, paddingLeft: 20)
+           title.anchor(top: tile.topAnchor, left: tile.leftAnchor, bottom: tile.bottomAnchor, paddingLeft: 14)
            title.centerY(inView: tile)
            
            let arrow = UIImageView()
@@ -183,7 +183,7 @@ class SettingsViewController: UIViewController {
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, width: 38, height: 38)
         
         view.addSubview(titleLbl)
-        titleLbl.anchor(top: safeArea.bottomAnchor, paddingTop: 20)
+        titleLbl.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 70)
         titleLbl.centerX(inView: view)
         
         let stack = UIStackView(arrangedSubviews: [profileTile, contactTile, shareTile])
@@ -192,8 +192,7 @@ class SettingsViewController: UIViewController {
         stack.spacing = 0
         
         view.addSubview(stack)
-        stack.anchor(top: titleLbl.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,paddingBottom:100, width: 100, height: 210)
-        stack.centerX(inView: view)
+        stack.anchor( top: titleLbl.bottomAnchor,left: view.leftAnchor, right: view.rightAnchor,paddingTop: 30, width: 100, height: 210)
         stack.centerY(inView: view)
         view.addSubview(logoutButton)
         
