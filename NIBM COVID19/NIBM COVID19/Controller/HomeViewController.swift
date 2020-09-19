@@ -35,8 +35,8 @@ class HomeViewController: UIViewController {
            let iconImage = UIImageView()
            iconImage.image = UIImage(named: "woman")
            containerView.addSubview(iconImage)
-           iconImage.anchor(left: containerView.leftAnchor)
-           iconImage.setDimensions(height: 50, width: 50)
+           iconImage.anchor(left: containerView.leftAnchor, width: 150,height: 150 )
+        //   iconImage.setDimensions(height: 150, width: 80)
            iconImage.centerY(inView: containerView)
            
            let topText = UILabel()
@@ -77,14 +77,6 @@ class HomeViewController: UIViewController {
         title.text = "NIBM is closed until further notice"
         tile.addSubview(title)
         title.anchor(top: tile.topAnchor,  left: title.leftAnchor, right: tile.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingRight: 12)
-        
-           let arrow = UIImageView()
-           arrow.image = UIImage(systemName: "chevron.right")
-           arrow.tintColor = .darkGray
-           arrow.layer.masksToBounds = true
-           tile.addSubview(arrow)
-           arrow.anchor(left: title.rightAnchor, paddingLeft: 5, width: 32, height: 32)
-    
         
            
            let description = UILabel()

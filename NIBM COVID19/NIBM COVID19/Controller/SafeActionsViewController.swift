@@ -54,11 +54,11 @@ class SafeActionsViewController:UIViewController, UICollectionViewDelegate, UICo
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = safeAction(imgName: "handwash", headerText: "Wash your hands", description: " Washing your hands frequently will destroy the viruses and bacterias!!")
-        let que2 = safeAction(imgName: "nocrowd", headerText: "Avoid crowd", description: "Please avoid visiting crowded places. Crowded places are the number one Covid 19 hotspots")
-        let que3 = safeAction(imgName: "patient", headerText: "Wear facemask", description: "Wearing facemask will save yourself aswell as others from spreading diseases, it will reduces the spread of viruses")
-        let que4 = safeAction(imgName: "handsanitizer", headerText: "Use hand sanitizer", description: "Sanitize your hand frequently will kill all the germs in your hands")
-        let que5 = safeAction(imgName: "socialdistancing", headerText: "Maintain socialdistancing ?", description: "Maintain atleast 1 meter gap inbetween yourself and others when going out and follow covid 19 safe guidlines")
+        let que1 = safeAction(imgName: "washing-hands", headerText: "Wash your hands", description: " Washing your hands frequently will destroy the viruses and bacterias!!")
+        let que2 = safeAction(imgName: "group", headerText: "Avoid crowd", description: "Please avoid visiting crowded places. Crowded places are the number one Covid 19 hotspots")
+        let que3 = safeAction(imgName: "woman", headerText: "Wear facemask", description: "Wearing facemask will save yourself aswell as others from spreading diseases, it will reduces the spread of viruses")
+        let que4 = safeAction(imgName: "washHand", headerText: "Use hand sanitizer", description: "Sanitize your hand frequently will kill all the germs in your hands")
+        let que5 = safeAction(imgName: "keep-distance", headerText: "Maintain socialdistancing ?", description: "Maintain atleast 1 meter gap inbetween yourself and others when going out and follow covid 19 safe guidlines")
       
         actionArray = [que1, que2, que3,que4,que5]
         

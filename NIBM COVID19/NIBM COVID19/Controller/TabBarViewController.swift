@@ -24,7 +24,7 @@ class TabBarViewController: UIViewController {
         
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem.title = "HOME"
-        homeViewController.tabBarItem.image = UIImage(named: "Home")
+        homeViewController.tabBarItem.image = UIImage(named: "home")
         
             
 

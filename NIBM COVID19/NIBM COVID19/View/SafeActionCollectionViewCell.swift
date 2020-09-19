@@ -40,6 +40,7 @@ class SafeActionCollectionViewCell: UICollectionViewCell {
 
     func setupViews() {
         addSubview(imgView)
+        imgView.anchor(top: self.safeAreaLayoutGuide.topAnchor, paddingTop: 70, width: 200, height: 200)
         imgView.centerX(inView: self)
         
         addSubview(lblHeader)
