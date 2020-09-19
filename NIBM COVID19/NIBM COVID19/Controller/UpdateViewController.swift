@@ -122,6 +122,15 @@ class UpdateViewController: UIViewController {
         return label
     }()
     
+    private let tempLbl: UILabel = {
+        let label = UILabel()
+        label.text = "Body Temperature"
+        label.font = UIFont(name: "Avenir-Light", size: 26)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -171,13 +180,30 @@ class UpdateViewController: UIViewController {
             surveyTileButton.anchor(top: surveyTile.topAnchor, right: surveyTile.rightAnchor, width: 60)
             surveyTileButton.centerY(inView: surveyTile)
             
+            view.addSubview(tempLbl)
+            tempLbl.anchor(top: surveyTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 15, paddingLeft: 20, paddingRight: 20, height: 70)
+            
             view.addSubview(temperatureTextfield)
-            temperatureTextfield.anchor(top: surveyTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 70)
+            temperatureTextfield.anchor(top: tempLbl.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 70)
             temperatureTextfield.centerX(inView: view)
             
             view.addSubview(temperatureSubmitButton)
             temperatureSubmitButton.anchor(top: temperatureTextfield.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 70)
             temperatureSubmitButton.centerX(inView: view)
+            
+            let userId = Auth.auth().currentUser?.uid
+            Database.database().reference().child("users").child(userId!).observeSingleEvent(of: .value, with: { ( snapshot) in
+                
+                let value = snapshot.value as? NSDictionary
+                let temp = value?["bodyTemp"] as? String ?? ""
+                self.tempLbl.text = "\(temp)"+" C"
+                
+                
+            }) { (error) in
+            
+               print("Body Temperature not found")
+           }
+            
         }
         
         func configNavBar() {
@@ -204,13 +230,25 @@ class UpdateViewController: UIViewController {
     
     @objc func updateTemperature(){
     
-        let temperature = temperatureTextfield.text
+       guard let temperature = temperatureTextfield.text else { return }
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        let values = [
+            "bodyTemp": temperature,
+        ] as [String : Any]
         
         if(temperature == ""){
             popupAlert()
         }
         else{
-            succesAlert()
+            
+            Database.database().reference().child("users").child(userId).updateChildValues(values) { ( error, ref ) in
+                
+                self.succesAlert()
+                self.configureUI()
+                self.temperatureTextfield.text = ""
+            }
+         
         }
      
     }

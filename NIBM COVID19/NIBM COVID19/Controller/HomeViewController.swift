@@ -22,9 +22,9 @@ class HomeViewController: UIViewController {
 
     private let userMap = MKMapView()
   
-     private let locationInputUIView = LocationInputView()
+    // private let locationInputUIView = LocationInputView()
      private let locationManager = LocationHandling.shared.locationManager
-    private var route: MKRoute?
+     private var route: MKRoute?
 
     
     
@@ -216,7 +216,7 @@ class HomeViewController: UIViewController {
     
     func configController() {
         configureNavigationBar()
-       configureUI()
+        configureUI()
     }
 
     
@@ -234,23 +234,34 @@ class HomeViewController: UIViewController {
         
         view.addSubview(caseTile)
         caseTile.anchor(top: notificTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, height: 25 * view.bounds.height/100)
+        
+        
         view.addSubview(mapTile)
+        mapTile.addSubview(userMap)
+        
+        userMap.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 220)
+                       //userMap.frame = view.frame
+                       print(userMap.bounds.height)
+                       userMap.showsUserLocation = true
+                       userMap.userTrackingMode = .follow
+                       userMap.delegate = self
+        
         mapTile.anchor(top: caseTile.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
-     setMap()
+      // setMap()
     }
 
-
-    func setMap(){
-
-       mapTile.addSubview(userMap)
-               userMap.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 220)
-               //mapView.frame = view.frame
-               print(userMap.bounds.height)
-               userMap.showsUserLocation = true
-               userMap.userTrackingMode = .follow
-               userMap.delegate = self
-    }
+//
+//    func setMap(){
+//
+//       mapTile.addSubview(userMap)
+//               userMap.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 220)
+//               //mapView.frame = view.frame
+//               print(userMap.bounds.height)
+//               userMap.showsUserLocation = true
+//               userMap.userTrackingMode = .follow
+//               userMap.delegate = self
+//    }
 
     // MARK: - Navigation
 
@@ -294,7 +305,7 @@ extension HomeViewController: MKMapViewDelegate {
         }
         return nil
     }
-    
+
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let route = self.route {
             let polyline = route.polyline
