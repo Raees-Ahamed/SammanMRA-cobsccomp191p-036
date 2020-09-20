@@ -31,6 +31,30 @@ class NIBM_COVID19UITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func validateLoginSuccess() {
+        
+      let email = "Sam@gmail.com"
+      let password = "Sam123"
+
+      let app = XCUIApplication()
+      app.launch()
+        
+        let txtEmail = app.textFields["Email"]
+        XCTAssert(txtEmail.exists)
+        txtEmail.tap()
+        txtEmail.typeText(email)
+        
+        let txtPassword = app.secureTextFields["Password"]
+        XCTAssert(txtPassword.exists)
+        txtPassword.tap()
+        txtPassword.typeText(password)
+        
+        let loginButton = app.buttons["Login"]
+        loginButton.tap()
+        
+        
+    }
 
    /* func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

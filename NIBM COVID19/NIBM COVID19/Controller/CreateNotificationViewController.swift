@@ -123,5 +123,4 @@ class CreateNotificationViewController: UIViewController {
              self.present(ac, animated: true)
           }
       }
-
 }
